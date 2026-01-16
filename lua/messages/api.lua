@@ -11,6 +11,7 @@ M.open_float = function(text)
   vim.api.nvim_buf_set_lines(bufnr, 0, -1, true, lines)
   vim.api.nvim_buf_set_name(bufnr, settings.buffer_name)
   vim.api.nvim_buf_set_option(bufnr, 'bufhidden', 'delete')
+  vim.api.nvim_set_option_value('number', true, { win = winnr })
 
   settings.post_open_float(winnr)
   return winnr
